@@ -1,4 +1,3 @@
-import Header2 from "@/components/Header2"
 import Header1 from "../components/Header1"
 import Header3 from "@/components/Header3"
 import Image from "next/image"
@@ -15,7 +14,7 @@ const Home = () => {
         
       </Head>
       <Header1/>
-      <Header2/>
+      
       <Header3/>
       <div className="mx-20">
         <div className=" my-14">

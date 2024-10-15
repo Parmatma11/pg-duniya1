@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-const Hotel = ({ e, city }) => {
+const tilaknagar = ({ e, city }) => {
   
   return (
     <div className=" border-2 border-red-500 rounded-lg h-70 w-full mb-5 p-5">
@@ -76,4 +76,4 @@ const Hotel = ({ e, city }) => {
   );
 };
 
-export default Hotel;
+export default tilaknagar;

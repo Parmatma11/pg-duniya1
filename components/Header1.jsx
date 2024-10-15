@@ -5,17 +5,15 @@ import Link from "next/link";
 
 const Header1 = () => {
   return (
-    <div className = 'flex justify-between border-b-2 border-grey-300 items-center h-24 px-10'>
-      <Image src={'/logo.png'} alt="logo" width={150} height={150} className='w-28 h-28' 
+    <div className = 'flex justify-between border-b-2 border-grey-300 items-center h-30 px-10'>
+      <Image src={'/kkaaa.svg'} alt="logo" width={100} height={100} className='w-28 h-28 border-r-4' 
       />
-      <div className ="border-r-2 border-grey-300 h-full flex">
-        <Block title={'Become a Member'} para={'additional 10%off on stays'}/>
-        <Block title={'Become a Member'} para={'additional 10%off on stays'}/>
-        <Block title={'Become a Member'} para={'additional 10%off on stays'}/>
-        <Block title={'Become a Member'} para={'additional 10%off on stays'}/>
+      <div className ="border-r-2 border-grey-300 h-full flex ">
+        <Block title={'About Us'} para={''}/>
+        <Block title={'Contact Us'} para={''}/>
         <div className="flex items-center px-3">
         <Image
-        src={"/demo.svg"}
+        src={"/kkaaa.svg"}
         alt="demo"
         width={200}
         height={200}

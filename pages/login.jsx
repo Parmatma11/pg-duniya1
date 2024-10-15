@@ -19,11 +19,11 @@ const Login = () => {
       email,
       password,
     });
-    if (res?.data) {
-      Cookies.set("user", res.data.token, { expires: 7 });
-      alert(res.data.msg);
-      router.back();
-    }
+    // if (res?.data) {
+    //   Cookies.set("user", res.data.token, { expires: 7 });
+    //   alert(res.data.msg);
+    //   router.back();
+    // }
   };
 
   const handleToggle = () => {
@@ -31,16 +31,29 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    const res = await axios.post(`/api/user/login`, {
-      email,
-      password,
-    });
-    if (res?.data) {
-      Cookies.set("user", res.data.token, { expires: 7 });
-      alert(res.data.msg);
-      router.back();
+    try {
+      // Send login request to the backend API
+      const res = await axios.post(`/api/user/login`, {
+        email,  // email input from user
+        password,  // password input from user
+      });
+  
+      // Check if the response contains the redirect URL and a success message
+      if (res?.data) {
+        // Alert the user with the success message
+  
+        // Redirect the user to the specified page (in this case, "/Home")
+        if (res.data.redirectUrl) {
+          window.location.href = res.data.redirectUrl;  // Redirect to "/Home"
+        }
+      }
+    } catch (error) {
+      // Handle any errors, like incorrect credentials
+      console.error("Login error:", error);
+      alert("Invalid email or password. Please try again.");
     }
   };
+  
 
   return (
     <div>
@@ -86,6 +99,7 @@ const Login = () => {
                 placeholder="Enter your email..."
                 className=" outline-none border my-3 border-black px-3 py-1 w-96 h-10"
                 onChange={(e) => setEmail(e.target.value)}
+
               />
               <input
                 type="password"
